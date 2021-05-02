@@ -11,6 +11,8 @@ header {
 
     .weather-span,
     .spa-span {
+        font-size: 2rem;
+        font-weight: 200;
         font-style: italic;
     }
 
@@ -22,13 +24,10 @@ header {
         margin-right: 10rem;
     }
 
-    &__list-item {
-        margin-right: 4rem;
-    }
-
     &__link {
         position: relative;
         z-index: 2;
+        margin-right: 4.5rem;
     }
 
     &__link::after {
@@ -50,6 +49,10 @@ header {
         &::after {
             transform: scaleX(1);
         }
+    }
+
+    &__btn {
+        margin-right: 2rem;
     }
 
 }
