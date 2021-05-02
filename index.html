@@ -8,11 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-  <div class="page-wrapper">
+  <div class="page-wrapper flex flex--centered">
     <div class="root">
         <header>
-            <div class="header">
-            </div>
+            <nav class="top-navigation flex">
+              <div class="top-navigation__logo-wrapper flex">
+                  <span class="weather-span">Weather.</span>
+                  <span class="spa-span">ID</span>
+              </div>
+              <ul class="top-navigation__list flex flex--centered">
+                <li class="top-navigation__list-item"><a href="/" class="top-navigation__link flex flex--centered">Home</a></li>
+                <li class="top-navigation__list-item"><a href="/weather" class="top-navigation__link flex flex--centered">Weather</a></li>
+                <li class="top-navigation__list-item"><a href="/about" class="top-navigation__link flex flex--centered">About</a></li>
+                <li class="top-navigation__list-item"><a href="/login" class="top-navigation__btn flex flex--centered btn btn--primary">Log In</a></li>
+                <li class="top-navigation__list-item"><a href="/register" class="top-navigation__btn flex flex--centered btn btn--secondary">Register</a></li>
+              </ul>
+            </nav>
         </header>
         <main>
         </main>

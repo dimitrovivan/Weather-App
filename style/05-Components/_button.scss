@@ -1,0 +1,19 @@
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+
+  &:hover {
+    box-shadow: 0px 3px 7px 0.1px black;
+  }
+
+  &--primary {
+    background: linear-gradient(20deg, rgba(0,171,237,1) 22%, rgba(0,134,224,1) 53%);
+  }
+
+  &--secondary {
+    color: $blue-900;
+    background: linear-gradient(20deg, rgba(255,255,255,1) 0%, rgba(204,225,235,1) 74%);
+    font-weight: 600;
+  }
+}
+

@@ -270,6 +270,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  color: #efeff6;
 }
 
 h1 {
@@ -312,19 +313,31 @@ p {
   padding: 0;
 }
 
-.page-wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+a {
+  font-size: 1.5rem;
+  color: #efeff6;
+  text-decoration: none;
+}
+
+.flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.flex--centered {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.page-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   background: #ced4fa;
   background: linear-gradient(42deg, #ced4fa 41%, #bdc6f7 67%);
 }
@@ -335,6 +348,7 @@ p {
   display: grid;
   -ms-grid-rows: 1fr 5fr;
       grid-template-rows: 1fr 5fr;
+  padding-left: 10%;
   width: 85%;
   height: 85%;
   border-radius: 8px;
@@ -355,5 +369,86 @@ p {
   width: 100%;
   height: 50%;
   opacity: 0.3;
+}
+
+header {
+  position: relative;
+  z-index: 1;
+  margin-top: 2.5rem;
+}
+
+.top-navigation {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-navigation .weather-span,
+.top-navigation .spa-span {
+  font-style: italic;
+}
+
+.top-navigation .spa-span {
+  color: #00abed;
+}
+
+.top-navigation__list {
+  margin-right: 10rem;
+}
+
+.top-navigation__list-item {
+  margin-right: 4rem;
+}
+
+.top-navigation__link {
+  position: relative;
+  z-index: 2;
+}
+
+.top-navigation__link::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #93c0e0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.top-navigation__link:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0px 3px 7px 0.1px black;
+          box-shadow: 0px 3px 7px 0.1px black;
+}
+
+.btn--primary {
+  background: linear-gradient(20deg, #00abed 22%, #0086e0 53%);
+}
+
+.btn--secondary {
+  color: #00abed;
+  background: linear-gradient(20deg, white 0%, #cce1eb 74%);
+  font-weight: 600;
 }
 /*# sourceMappingURL=main.css.map */

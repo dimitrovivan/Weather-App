@@ -1,10 +1,16 @@
+@import './style/01-Tools/colors';
+
 @import './style/02-Generics/normalizer';
 @import './style/02-Generics/typography';
 
 @import './style/03-Elements/buttons';
 @import './style/03-Elements/lists';
 @import './style/03-Elements/paragraphs';
+@import './style/03-Elements/links';
+
+@import './style/04-Objects/flex-containers';
 
 @import './style/05-Components/pageWrapper';
 @import './style/05-Components/root';
 @import './style/05-Components/header';
+@import './style/05-Components/button';
