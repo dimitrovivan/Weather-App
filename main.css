@@ -517,6 +517,16 @@ main {
   margin: 2rem auto 5rem;
 }
 
+.register-page {
+  margin-left: 10rem;
+  max-width: 70%;
+}
+
+.register-page__header h1 {
+  text-align: center;
+  margin: 2rem auto 5rem;
+}
+
 .submit-form {
   display: -webkit-box;
   display: -ms-flexbox;
