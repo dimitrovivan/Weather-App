@@ -1,0 +1,33 @@
+.submit-form {
+    
+    display: flex;
+    flex-flow: column wrap;
+
+    h5 {
+        text-align: center;
+        margin: 0 0 1rem;
+        font-weight: 300;
+    }
+
+    input {
+        display: flex;
+        justify-content: center;
+        padding: 5px 0px 5px 10px;
+        margin-bottom: 3rem;
+        outline: none;
+        background-color: $primary-white;
+        border: 1px solid $primary-white;
+        border-radius: 5px;
+        transition: transform 200ms ease;
+        
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+        }
+    }
+
+    a {
+        margin: 0 auto;
+        width: 20%;
+    }
+}

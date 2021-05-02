@@ -26,16 +26,16 @@
             <li class="top-navigation__list-item"><a href="/about"
                 class="top-navigation__link flex flex--centered">About</a></li>
             <li class="top-navigation__list-item"><a href="/login"
-                class="top-navigation__btn flex flex--centered btn btn--primary">Log In</a></li>
+                class="top-navigation__btn btn btn--primary">Log In</a></li>
             <li class="top-navigation__list-item"><a href="/register"
-                class="top-navigation__btn flex flex--centered btn btn--secondary">Register</a></li>
+                class="top-navigation__btn btn btn--secondary">Register</a></li>
           </ul>
         </nav>
       </header>
       <main>
         <!-- 
              /about page
-          -->
+
         <div class="about-page flex flex--column">
 
           <div class="about-page__header">
@@ -55,6 +55,24 @@
 
           <div class="about-page__footer">Copyright@ 2021 Designed by Ivan Dimitrov</div>
 
+        </div>
+                  -->
+
+        <!-- login page -->
+
+        <div class="login-page flex flex--column">
+          <div class="login-page__header">
+            <h1>Login</h1>
+          </div>
+          <div class="login-page__main">
+            <form class="submit-form">
+              <label for="email"><h5>Email:</h5></label>
+              <input type="email" class="loginEmail" name="email">
+              <label for="lname"><h5>Password:</h5></label>
+              <input type="text"  class="loginPassword" name="password">
+              <a href="/" class="btn btn--primary">Log in</a>
+          </form>
+          </div>
         </div>
       </main>
     </div>
