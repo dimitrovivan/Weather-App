@@ -1,0 +1,33 @@
+.home-page {
+    
+    &__heading {
+        margin: 0 0 3rem;
+    }
+
+    &__description {
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+        }
+
+        a {
+            font-size: 2rem;
+            color: $blue-900;
+        }
+    }
+
+    &__main {
+
+        margin-bottom: 20px;
+
+        .picture-wrapper {
+            width: 300px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}

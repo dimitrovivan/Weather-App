@@ -337,8 +337,8 @@ a {
 .flex--column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .page-wrapper {
@@ -471,6 +471,32 @@ header {
   font-weight: 600;
 }
 
+.home-page__heading {
+  margin: 0 0 3rem;
+}
+
+.home-page__description p {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+.home-page__description a {
+  font-size: 2rem;
+  color: #00abed;
+}
+
+.home-page__main {
+  margin-bottom: 20px;
+}
+
+.home-page__main .picture-wrapper {
+  width: 300px;
+}
+
+.home-page__main .picture-wrapper img {
+  width: 100%;
+}
+
 .about-page {
   height: 100%;
   display: -ms-grid;
@@ -571,6 +597,99 @@ main {
 .submit-form a {
   margin: 0 auto;
   width: 20%;
+}
+
+.curr-weather {
+  position: relative;
+  max-width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  background-color: #28089B;
+  border-radius: 5px;
+  margin-top: 3rem;
+  z-index: -996;
+}
+
+.curr-weather__header {
+  border-radius: 5px;
+  padding: 2rem 0 2rem 3rem;
+  background-color: #400bc7;
+}
+
+.curr-weather__header h4 {
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+
+.curr-weather__body {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.curr-weather__main-temp-description {
+  position: relative;
+  width: 30%;
+  padding: 5px;
+}
+
+.curr-weather__main-temp-description .temp-image-wrapper {
+  width: 50px;
+}
+
+.curr-weather__main-temp-description .temp-image-wrapper h4 {
+  font-size: 40px;
+}
+
+.curr-weather__main-temp-description::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #400bc7;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -995;
+}
+
+.curr-weather__extra-description {
+  width: 70%;
+  position: relative;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5px;
+}
+
+.curr-weather__extra-description::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #400bc7;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -995;
 }
 
 .text-centered {

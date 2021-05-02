@@ -1,0 +1,78 @@
+.curr-weather {
+    position: relative;
+    max-width: 70%;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: $blue-800;
+    border-radius: 5px;
+    margin-top: 3rem;
+    z-index: -996;
+
+    &__header {
+        border-radius: 5px;
+        padding: 2rem 0 2rem 3rem;
+        background-color: $violet-900;
+
+        h4 {
+            margin: 0 0 10px;
+            font-weight: 400;
+        }
+    }
+
+    &__body {
+        margin: 10px;
+        display: flex;
+    }
+
+    &__main-temp-description {
+        position: relative;
+        width: 30%;
+        padding: 5px;
+
+        .temp-image-wrapper {
+            width: 50px;
+
+            h4 {
+                font-size: 40px;
+            }
+
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: $violet-900;
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -995;
+        }
+    }
+
+    &__extra-description {
+        width: 70%;
+        position: relative;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 5px;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: $violet-900;
+            opacity: 0.3;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -995;
+        }
+    }
+}
