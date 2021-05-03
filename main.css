@@ -319,6 +319,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -610,7 +614,7 @@ main {
           transform: scale(1.01);
 }
 
-.submit-form a {
+.submit-form button {
   margin: 0 auto;
   width: 20%;
 }
