@@ -1,4 +1,5 @@
 import { getTemplate, rootRender } from './templateServices.js';
+import { getDataFromStorage } from './authServices.js';
 
 const routeOnPopstate = () => router(location.pathname);
 
@@ -7,28 +8,53 @@ window.addEventListener('popstate', routeOnPopstate);
 const route = [
     {
         regexPath: /^\/$/,
-        execute: () => getTemplate('home', {isLogged: true})
+        execute: () => {
+            
+            let userData = getDataFromStorage('userData');
+
+            return getTemplate('home', userData);
+        }
     },
 
 
     {
         regexPath: /^\/weather$/,
-        execute: () => getTemplate('home', {isLogged: true})
+        execute: () => {
+
+            let userData = getDataFromStorage('userData');
+
+            return getTemplate('home', userData);
+        }
     },
 
     {
         regexPath: /^\/about$/,
-        execute: () => getTemplate('about', {isLogged: true})
+        execute: () => {
+
+            let userData = getDataFromStorage('userData');
+
+            return getTemplate('about', userData);
+        }
     },
 
     {
         regexPath: /^\/login$/,
-        execute: () => getTemplate('login', {isLogged: true})
+        execute: () => {
+
+            let userData = getDataFromStorage('userData');
+
+            return getTemplate('login', userData);
+        }
     },
 
     {
         regexPath: /^\/register$/,
-        execute: () => getTemplate('register', {isLogged: true})
+        execute: () => {
+
+            let userData = getDataFromStorage('userData');
+            
+            return getTemplate('register', userData);
+        }
     },
 ]
 

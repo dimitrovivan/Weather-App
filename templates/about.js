@@ -3,7 +3,7 @@ import  headerTemplate from '../templates/partials/header.js';
 
 export default ( {
     isLogged
-}) => html`${headerTemplate()}
+}) => html`${headerTemplate(isLogged)}
 <div class="about-page flex flex--column">
           <div class="about-page__header">
             <h1>About page</h1>
