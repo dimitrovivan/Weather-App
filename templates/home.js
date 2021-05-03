@@ -9,7 +9,7 @@ export default ( {
               <h1 class="home-page__heading">Weather Web App</h1>
               <div class="home-page__description">
               <p>Check out the weather in the location you want, anywhere , at anytime!</p>
-              <p></p> All you need is simple <a href="/register" class="navLink">Register</a> or go directly to <a href="/login" class="navLink">Log in</a> if you are already registered!</p>
+              <p></p> All you need is simple <a href="/register" class="navLink">Register</a> or go directly to check <a href="/weather" class="navLink">Weather</a> if you are already registered!</p>
             </div>
           </div>
 
