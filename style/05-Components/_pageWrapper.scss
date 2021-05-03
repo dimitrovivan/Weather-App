@@ -1,8 +1,15 @@
+body {
+   position: relative;
+   z-index: -1000;
+}
 .page-wrapper {
     position: relative;
     width: 100vw;
     height: 100vh;
     background: rgb(206,212,250);
     background: linear-gradient(42deg, rgba(206,212,250,1) 41%, rgba(189,198,247,1) 67%);
+    z-index: -999;
   }
+
+
 

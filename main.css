@@ -341,16 +341,23 @@ a {
           flex-direction: column;
 }
 
+body {
+  position: relative;
+  z-index: -1000;
+}
+
 .page-wrapper {
   position: relative;
   width: 100vw;
   height: 100vh;
   background: #ced4fa;
   background: linear-gradient(42deg, #ced4fa 41%, #bdc6f7 67%);
+  z-index: -999;
 }
 
 .root {
   position: relative;
+  z-index: -997;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 5fr;
@@ -376,6 +383,7 @@ a {
   width: 100%;
   height: 50%;
   opacity: 0.3;
+  z-index: -998;
 }
 
 header {
@@ -543,6 +551,10 @@ main {
   margin: 2rem auto 5rem;
 }
 
+.login-page .footer {
+  margin: 10rem auto 0;
+}
+
 .register-page {
   margin-left: 10rem;
   max-width: 70%;
@@ -551,6 +563,10 @@ main {
 .register-page__header h1 {
   text-align: center;
   margin: 2rem auto 5rem;
+}
+
+.register-page .footer {
+  margin: 5rem auto 0;
 }
 
 .submit-form {
