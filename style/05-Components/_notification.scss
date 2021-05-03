@@ -1,0 +1,26 @@
+.notification-container {
+    
+    color: white;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    position: absolute;
+    z-index: 999;
+    padding: 1.6rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px;
+    width: 35%;
+    border-radius: 20px;
+    box-shadow: 2px 6px 10px 0px #6371be;
+    display: none;
+}
+
+.error {
+    background-color: red;
+}
+
+.success {
+    background: linear-gradient(20deg, #00abed 22%, #0086e0 53%);
+}

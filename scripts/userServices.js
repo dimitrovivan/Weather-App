@@ -1,5 +1,6 @@
 import { redirect } from './router.js';
 import { saveDataInStorage, deleteDataFromStorage } from './authServices.js';
+import { showNotification } from './notification.js';
 
 const apiKey = "AIzaSyAkl19DDzE8x0ftC5SwNggOHSu3IAyh7jI";
 
@@ -29,15 +30,19 @@ const checkOnSubmit = {
 
 
         //TODO:: send notification
-        if (!email || !password || !repeatPassword) return false;
-
-        if (password !== repeatPassword) {
-            console.log(1);
-            passwordElement.value = '';
-            repPasswordElement.value = '';
+        if (!email || !password || !repeatPassword) {
+            showNotification("error", "Please fill all fields");
             return false;
         }
 
+        if (password !== repeatPassword) {
+            passwordElement.value = '';
+            repPasswordElement.value = '';
+            showNotification("error", "Password missmatch");
+            return false;
+        }
+
+        showNotification("success", "Successfully registered");
         return true;
     },
 

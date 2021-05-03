@@ -1,9 +1,10 @@
 .btn {
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
 
   &:hover {
     box-shadow: 0px 3px 7px 0.1px black;
