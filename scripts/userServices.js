@@ -1,5 +1,5 @@
 import { redirect } from './router.js';
-import { saveDataInStorage } from './authServices.js';
+import { saveDataInStorage, deleteDataFromStorage } from './authServices.js';
 
 const apiKey = "AIzaSyAkl19DDzE8x0ftC5SwNggOHSu3IAyh7jI";
 
@@ -98,4 +98,11 @@ export async function login() {
         redirect('/');
 
     }
+}
+
+export function logout() {
+
+    deleteDataFromStorage('userData');
+
+    redirect('/');
 }

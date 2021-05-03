@@ -55,7 +55,7 @@ const route = [
             
             return getTemplate('register', userData);
         }
-    },
+    }
 ]
 
 function router(path) {

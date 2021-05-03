@@ -1,4 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html?module';
+import { logout } from '../../scripts/userServices.js';
+
 
 export default (isLogged) => html`
 <header>
@@ -17,6 +19,8 @@ export default (isLogged) => html`
             ? html`
             <li class="top-navigation__list-item"><a href="/weather"
                 class="top-navigation__link flex flex--centered navLink">Weather</a></li>
+                <li class="top-navigation__list-item"><a class="top-navigation__btn btn btn--primary" @click=${logout}>Logout</a>
+            </li>
             `
             : html`
             <li class="top-navigation__list-item"><a href="/login"
