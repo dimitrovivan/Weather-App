@@ -24,14 +24,18 @@ const checkOnSubmit = {
 
     register: (emailElement, passwordElement, repPasswordElement) => {
 
-        let email = emailElement.value;
+        let email = (emailElement.value).toLowerCase();
         let password = passwordElement.value;
         let repeatPassword = repPasswordElement.value;
 
 
-        //TODO:: send notification
         if (!email || !password || !repeatPassword) {
             showNotification("error", "Please fill all fields");
+            return false;
+        }
+
+        if (!checkEmailValidation(email)) {
+            showNotification("error", "Invalid email... Example: showEmail@mail.bg");
             return false;
         }
 
@@ -42,16 +46,23 @@ const checkOnSubmit = {
             return false;
         }
 
-        showNotification("success", "Successfully registered");
         return true;
     },
 
     login: (emailElement, passwordElement) => {
 
-        let email = emailElement.value;
+        let email = (emailElement.value).toLowerCase();
         let password = passwordElement.value;
 
-        if (!email || !password) return false;
+        if (!email || !password) {
+            showNotification("error", "Please fill all fields");
+            return false;
+        }
+
+        if (!checkEmailValidation(email)) {
+            showNotification("error", "Invalid email... Example: showemail@mail.bg");
+            return false;
+        }
 
         return true;
     }
@@ -67,11 +78,20 @@ export async function register() {
 
     let body = { email: emailElement.value, password: passwordElement.value }
 
-    let response = await request.post(endpoints.register, body);
+    try {
+        let response = await request.post(endpoints.register, body);
 
-    if (response.ok) redirect('/login');
+        if (response.ok) {
+            showNotification("success", "Successfully registrated");
+            return redirect('/login');
+        }
 
-    //TODO :: else error notification!
+        throw new Error("Server failed to execute your request, please try again later.");
+
+    } catch (error) {
+
+        showNotification("error", error.message);
+    }
 
 }
 
@@ -84,23 +104,25 @@ export async function login() {
 
     let body = { email: emailElement.value, password: passwordElement.value }
 
-    let response = await request.post(endpoints.login, body);
-
     let userData = { isLogged: false }
 
-    if (!response.ok) {
+    try {
 
-        saveDataInStorage('userData', userData);
-        // TODO : show error notification
-        return;
+    let response = await request.post(endpoints.login, body);
 
-    } else {
+    if(!response.ok) throw new Error("Wrong username or password");
 
-        let data = await response.json();
-        userData.isLogged = true;
-        let userId = data.localId;
-        saveDataInStorage('userData', { ...userData, userId });
-        redirect('/');
+    let data = await response.json();
+    userData.isLogged = true;
+    let userId = data.localId;
+    saveDataInStorage('userData', { ...userData, userId });
+    showNotification("success", "Logged in");
+    redirect('/');
+
+    } catch (error) {
+
+    saveDataInStorage('userData', userData);
+    showNotification("error", error.message);
 
     }
 }
@@ -108,6 +130,17 @@ export async function login() {
 export function logout() {
 
     deleteDataFromStorage('userData');
-
+    showNotification("success", "Logged out");
     redirect('/');
+}
+
+function checkEmailValidation(email) {
+
+    let regex = /^[a-zA-Z\d]+@[a-zA-Z]+\.[a-zA-Z]+$/g;
+
+    let result = email.match(regex);
+
+    if(result) return true;
+
+    return false;
 }
