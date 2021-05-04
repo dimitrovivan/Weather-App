@@ -647,6 +647,12 @@ main {
 .curr-weather__header h4 {
   margin: 0 0 10px;
   font-weight: 400;
+  font-style: italic;
+}
+
+.curr-weather__header p {
+  text-align: right;
+  margin-right: 3rem;
 }
 
 .curr-weather__body {
