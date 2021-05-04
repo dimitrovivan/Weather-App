@@ -5,6 +5,8 @@ const routeOnPopstate = () => router(location.pathname);
 
 window.addEventListener('popstate', routeOnPopstate);
 
+const forbiddenForGuestPath = ['/weather'];
+
 const route = [
     {
         regexPath: /^\/$/,
@@ -70,6 +72,8 @@ function router(path) {
 
 export function navigate(path) {
 
+    if(!checkForUnAuthorizedAccess(path)) path = '/login';
+
     history.pushState({}, '', path);
 
     let customEvent = new CustomEvent('popstate');
@@ -84,4 +88,14 @@ export function checkForPath(path)  {
     let currentRoute = route.find( ({ regexPath }) => path.match(regexPath));
 
     return currentRoute ? currentRoute : false;
+}
+
+function checkForUnAuthorizedAccess(path) {
+
+    let userData = getDataFromStorage('userData');
+
+    if(userData && userData.isLogged) return true;
+
+    return forbiddenForGuestPath.find( x => x == path) ? false : true;
+    
 }

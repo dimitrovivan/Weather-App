@@ -19,7 +19,6 @@ const request = {
 
 }
 
-// TODO :: optimize it with function with switch
 const checkOnSubmit = {
 
     register: (emailElement, passwordElement, repPasswordElement) => {
@@ -104,7 +103,7 @@ export async function login() {
 
     let body = { email: emailElement.value, password: passwordElement.value }
 
-    let userData = { isLogged: false }
+    let userData = { isLogged: false };
 
     try {
 
@@ -113,9 +112,13 @@ export async function login() {
     if(!response.ok) throw new Error("Wrong username or password");
 
     let data = await response.json();
+
     userData.isLogged = true;
+
     let userId = data.localId;
+
     saveDataInStorage('userData', { ...userData, userId });
+    
     showNotification("success", "Logged in");
     redirect('/');
 
