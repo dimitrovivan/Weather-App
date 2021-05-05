@@ -1,0 +1,64 @@
+.weather-page {
+    position: relative;
+
+
+    &__body {
+        justify-content: space-between;
+    }
+
+    &__image {
+        max-width: 50%;
+        margin: 50px 30px 0 0;
+
+        img {
+            border-radius: 10px;
+            width: 100%;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        max-width: 40%;
+
+        h2 {
+            margin: 50px 0 5px;
+            letter-spacing: .8px;
+        }
+
+        p {
+            margin: 15px 0;
+        }
+
+        .report-heading {
+            margin: 0 0 20%;
+        }
+
+        .get-weather-button {
+            color: white;
+            border-radius: 10px;
+        }
+
+        .search-input {
+            color: white;
+            padding-left: 20px;
+            margin-right: 2px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            width: 70%;
+            height: 50px;
+            background: rgba(112, 69, 231, 0.5);
+        }
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 20px;
+    }
+
+    &__data {
+        max-width: 60%;
+    }
+}
