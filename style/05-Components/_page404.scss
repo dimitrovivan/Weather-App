@@ -1,0 +1,25 @@
+.page-404 {
+
+    button {
+        border-top-left-radius: 100%;
+        border-bottom-left-radius: 100%;
+        padding: 15px 40px;
+        color: white;
+    }
+
+    &__heading {
+        font-style: italic;
+        font-size: 4.5rem;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
