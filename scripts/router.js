@@ -1,5 +1,6 @@
 import { getTemplate, rootRender } from './templateServices.js';
 import { getDataFromStorage } from './authServices.js';
+import { getTimeData, getCurrentLocation, getCurrentWeatherData } from './weatherServices.js';
 
 const routeOnPopstate = () => router(location.pathname);
 
@@ -10,11 +11,33 @@ const forbiddenForGuestPath = ['/weather'];
 const route = [
     {
         regexPath: /^\/$/,
-        execute: () => {
-            
+        execute: async () => {
+
+            let timeData = getTimeData();
+
             let userData = getDataFromStorage('userData');
 
-            return getTemplate('home', userData);
+            let longitude, latitude;
+
+            let context = { ...timeData, ...userData, city: "Sofia", country: "Bulgaria" };
+
+            rootRender(getTemplate('home', context));
+
+            try {
+
+            let position = await getCurrentLocation();
+
+            longitude = position.coords.longitude;
+            latitude = position.coords.latitude;
+
+            let weatherData = await getCurrentWeatherData(latitude, longitude);
+
+            context = { ...timeData, ...userData, ...weatherData };
+
+            } finally {
+
+                return getTemplate('home', context);
+            }
         }
     },
 
@@ -54,17 +77,17 @@ const route = [
         execute: () => {
 
             let userData = getDataFromStorage('userData');
-            
+
             return getTemplate('register', userData);
         }
     }
 ]
 
-function router(path) {
+async function router(path) {
 
-    let currentRoute  = checkForPath(path);
+    let currentRoute = checkForPath(path);
 
-    let template = currentRoute.execute();
+    let template = await currentRoute.execute();
 
     return rootRender(template);
 }
@@ -72,7 +95,7 @@ function router(path) {
 
 export function navigate(path) {
 
-    if(!checkForUnAuthorizedAccess(path)) path = '/login';
+    if (!checkForUnAuthorizedAccess(path)) path = '/login';
 
     history.pushState({}, '', path);
 
@@ -83,9 +106,9 @@ export function navigate(path) {
 
 export const redirect = (path) => navigate(path);
 
-export function checkForPath(path)  {
+export function checkForPath(path) {
 
-    let currentRoute = route.find( ({ regexPath }) => path.match(regexPath));
+    let currentRoute = route.find(({ regexPath }) => path.match(regexPath));
 
     return currentRoute ? currentRoute : false;
 }
@@ -94,8 +117,8 @@ function checkForUnAuthorizedAccess(path) {
 
     let userData = getDataFromStorage('userData');
 
-    if(userData && userData.isLogged) return true;
+    if (userData && userData.isLogged) return true;
 
-    return forbiddenForGuestPath.find( x => x == path) ? false : true;
-    
+    return forbiddenForGuestPath.find(x => x == path) ? false : true;
+
 }

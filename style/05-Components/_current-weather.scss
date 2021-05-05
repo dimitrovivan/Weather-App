@@ -9,20 +9,34 @@
     z-index: -996;
 
     &__header {
+        display: flex;
+        justify-content: space-between;
         border-radius: 5px;
         padding: 2rem 0 2rem 3rem;
         background-color: $violet-900;
+        
 
         h4 {
             margin: 0 0 10px;
             font-weight: 400;
             font-style: italic;
         }
+        
+    }
 
-        p {
-            text-align: right;
-            margin-right: 3rem;
-        }
+    &__location-description {
+        font-style: italic;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__time-description {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.9rem;
+        text-align: right;
+        margin-right: 3rem;
+           
     }
 
     &__body {

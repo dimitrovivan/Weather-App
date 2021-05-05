@@ -639,6 +639,12 @@ main {
 }
 
 .curr-weather__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-radius: 5px;
   padding: 2rem 0 2rem 3rem;
   background-color: #400bc7;
@@ -650,7 +656,21 @@ main {
   font-style: italic;
 }
 
-.curr-weather__header p {
+.curr-weather__location-description {
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.curr-weather__time-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.9rem;
   text-align: right;
   margin-right: 3rem;
 }

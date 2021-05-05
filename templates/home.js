@@ -2,7 +2,14 @@ import { html } from 'https://unpkg.com/lit-html?module';
 import  headerTemplate from '../templates/partials/header.js';
 
 export default ( {
-    isLogged
+    isLogged,
+    date,
+    year,
+    month,
+    hours,
+    minutes,
+    city,
+    country
 }) => html`${headerTemplate(isLogged)}
    <div class="home-page flex flex--column">
             <div class="home-page__header">
@@ -18,7 +25,10 @@ export default ( {
             <div class="curr-weather">
               <div class="curr-weather__header">
                 <h4 class="curr-weather__heading">Current Weather Report</h4>
-                <p class="curr-weather__time-description">2 May 2021, 18:17, Bulgaria, Burgas</p>
+                <div class="curr-weather__time-description">
+                   <div class="curr-weather__location-description">${country}, ${city}</div>
+                  <time>${date} ${month} ${year}, ${hours}:${minutes}</time>
+                </div>
               </div>
                 
               <div class="curr-weather__body">
