@@ -5,7 +5,7 @@ import  weatherTemplate from '../templates/weather.js';
 import  loginTemplate from '../templates/login.js';
 import  registerTemplate from '../templates/register.js';
 import  weatherForecast from '../templates/weatherForecast.js';
-import  page404 from '../templates/HTTP404.js';
+import  notFound from '../templates/notFound.js';
 
 let rootElement = document.querySelector('.root');
 
@@ -21,7 +21,7 @@ export const getTemplate = (templateName, context) => {
         case 'login': return loginTemplate(context);
         case 'register': return registerTemplate(context);
         case 'forecast': return weatherForecast(context);
-        case 'page404': return page404(context);
+        case 'notFound': return notFound(context);
         
     }
 }
