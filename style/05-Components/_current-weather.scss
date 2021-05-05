@@ -23,6 +23,12 @@
         }
         
     }
+    
+    .temp-description-wrapper {
+        margin-right: 10px;
+        font-size: 1.8rem;
+        text-align: right;
+    }
 
     &__location-description {
         font-style: italic;
@@ -47,15 +53,18 @@
     &__main-temp-description {
         position: relative;
         width: 30%;
-        padding: 5px;
 
         .temp-image-wrapper {
-            width: 50px;
-
-            h4 {
-                font-size: 40px;
+            img {
+                margin: 0 auto;
+                width: 70%;
             }
 
+        }
+
+        .weather-description {
+            margin: 5px;
+            font-size: 1.7rem;
         }
 
         &::after {
@@ -73,13 +82,22 @@
     }
 
     &__extra-description {
+
+        & > * {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+        }
+
         width: 70%;
         position: relative;
         margin-left: 10px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         padding: 5px;
 
         &::after {
@@ -93,6 +111,14 @@
             top: 0;
             left: 0;
             z-index: -995;
+        }
+
+        .weather-details-picture {
+            border-radius: 10%;
+            width: 60%;
+            height: 50%;
+            margin-bottom: 20px;
+
         }
     }
 }

@@ -656,6 +656,12 @@ main {
   font-style: italic;
 }
 
+.curr-weather .temp-description-wrapper {
+  margin-right: 10px;
+  font-size: 1.8rem;
+  text-align: right;
+}
+
 .curr-weather__location-description {
   font-style: italic;
   font-size: 2rem;
@@ -685,15 +691,16 @@ main {
 .curr-weather__main-temp-description {
   position: relative;
   width: 30%;
-  padding: 5px;
 }
 
-.curr-weather__main-temp-description .temp-image-wrapper {
-  width: 50px;
+.curr-weather__main-temp-description .temp-image-wrapper img {
+  margin: 0 auto;
+  width: 70%;
 }
 
-.curr-weather__main-temp-description .temp-image-wrapper h4 {
-  font-size: 40px;
+.curr-weather__main-temp-description .weather-description {
+  margin: 5px;
+  font-size: 1.7rem;
 }
 
 .curr-weather__main-temp-description::after {
@@ -723,9 +730,27 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 5px;
+}
+
+.curr-weather__extra-description > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 33%;
 }
 
 .curr-weather__extra-description::after {
@@ -739,6 +764,13 @@ main {
   top: 0;
   left: 0;
   z-index: -995;
+}
+
+.curr-weather__extra-description .weather-details-picture {
+  border-radius: 10%;
+  width: 60%;
+  height: 50%;
+  margin-bottom: 20px;
 }
 
 .notification-container {

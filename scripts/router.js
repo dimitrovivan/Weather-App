@@ -17,9 +17,11 @@ const route = [
 
             let userData = getDataFromStorage('userData');
 
-            let longitude, latitude;
+            let weatherData;
 
-            let context = { ...timeData, ...userData, city: "Sofia", country: "Bulgaria" };
+            weatherData = await getCurrentWeatherData(42.698334, 23.319941);
+
+            let context = { ...timeData, ...userData, ...weatherData };
 
             rootRender(getTemplate('home', context));
 
@@ -27,10 +29,10 @@ const route = [
 
             let position = await getCurrentLocation();
 
-            longitude = position.coords.longitude;
-            latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            let latitude = position.coords.latitude;
 
-            let weatherData = await getCurrentWeatherData(latitude, longitude);
+            weatherData = await getCurrentWeatherData(latitude, longitude);
 
             context = { ...timeData, ...userData, ...weatherData };
 

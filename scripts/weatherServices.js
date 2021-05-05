@@ -4,7 +4,7 @@ const apiKey = '246cebefc6972a472b2621e015a5d2a7';
 
 const getEndpoint = {
 
-    current: (latitude, longitude) => `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`,
+    current: (latitude, longitude) => `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`,
 }
 
 const monthObj = {
@@ -31,8 +31,8 @@ export function getTimeData() {
     const year = dateTime.getFullYear();
     const month = monthObj[dateTime.getMonth()];
     const day = dateTime.getDay();
-    const hours = dateTime.getHours();
-    const minutes = dateTime.getMinutes();
+    const hours = Number(dateTime.getHours()) < 10 ? `0${dateTime.getHours()}` : dateTime.getHours();
+    const minutes = Number(dateTime.getMinutes()) < 10 ? `0${dateTime.getMinutes()}` : dateTime.getMinutes();
 
     return {
         date,
@@ -58,11 +58,26 @@ export async function getCurrentWeatherData(latitude, longitude) {
 
     let data = await response.json();
 
+    let cloudPercentage = data.clouds.all;
+    let humidity = data.main.humidity;
+    let windSpeed = parseFloat(data.wind.speed).toFixed(1);
+    let currTemp = Math.round(data.main.temp);
+    let feelsLike = Math.round(data.main.feels_like);
+    let mainWeather = data.weather[0].main;
+    let weatherDescription = data.weather[0].description;
+    let weatherIconCode = data.weather[0].icon;
     let city = data.name;
     let countryCode = data.sys.country;
 
-
     return {
+        cloudPercentage,
+        humidity,
+        windSpeed,
+        currTemp,
+        feelsLike,
+        mainWeather,
+        weatherDescription,
+        weatherIconCode,
         city,
         country: countryObj[countryCode]
     }

@@ -9,7 +9,15 @@ export default ( {
     hours,
     minutes,
     city,
-    country
+    country,
+    weatherIconCode,
+    mainWeather,
+    weatherDescription,
+    feelsLike,
+    currTemp,
+    cloudPercentage,
+    humidity,
+    windSpeed,
 }) => html`${headerTemplate(isLogged)}
    <div class="home-page flex flex--column">
             <div class="home-page__header">
@@ -32,27 +40,30 @@ export default ( {
               </div>
                 
               <div class="curr-weather__body">
-                <div class="curr-weather__main-temp-description flex flex--centered flex--column">
-                  <div class="temp-image-wrapper"><h4>Img...</h4></div>
+                <div class="curr-weather__main-temp-description flex flex--column">
+                  <div class="temp-image-wrapper">
+                  <img src="http://openweathermap.org/img/wn/${weatherIconCode}@2x.png" alt="Weather Image">
+                  </div>
+                  <div class="weather-description"> ${mainWeather}, ${weatherDescription}</div>
                   <div class="temp-description-wrapper">
-                    <div>Temp C</div>
-                    <div>Feels like: Temp C</div>
+                    <div>Temp: ${currTemp} °</div>
+                    <div>Feels like: ${feelsLike} °</div>
                   </div>
                 </div>
                 <div class="curr-weather__extra-description">
                      <div class="curr-weather__cloudness">
-                       <h4>Img..</h1>
-                       <div>%Cloudness</div>
+                     <img src="../images/cloudness.jpg" alt="Wind picture" class="weather-details-picture">
+                       <div>Cloudness: ${cloudPercentage}%</div>
                      </div>
             
                      <div class="curr-weather__wind">
-                       <h4>Img</h1>
-                       <div>%m/s</div>
+                     <img src="../images/wind.png" alt="Wind picture" class="weather-details-picture">
+                       <div>Wind: ${windSpeed}m/s</div>
                      </div>
             
                      <div class="curr-weather__humudity">
-                       <h4>Img</h4>
-                       <div>%humudity</div>
+                     <img src="../images/humidity.png" alt="Wind picture" class="weather-details-picture">
+                       <div>Humudity: ${humidity}%</div>
                      </div>
                 </div>
               </div>
