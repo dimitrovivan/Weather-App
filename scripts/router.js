@@ -1,6 +1,6 @@
 import { getTemplate, rootRender } from './templateServices.js';
 import { getDataFromStorage } from './authServices.js';
-import { getTimeData, getCurrentLocation, getCurrentWeatherData } from './weatherServices.js';
+import { getTimeData, getCurrentLocation, getCurrentWeatherData, getFullWeatherData} from './weatherServices.js';
 
 const routeOnPopstate = () => router(location.pathname);
 
@@ -50,7 +50,25 @@ const route = [
 
             let userData = getDataFromStorage('userData');
 
-            return getTemplate('home', userData);
+            let context = {...userData};
+
+            return getTemplate('weather', context);
+        }
+    },
+
+    {
+        regexPath: /^\/weather\/[a-zA-Z]+$/,
+        execute: () => {
+
+            let userData = getDataFromStorage('userData');
+
+            let locationName = getDataFromStorage('location').name;
+
+            let weatherData = getFullWeatherData(locationName);
+
+            let context = {...userData, ...weatherData};
+
+            return getTemplate('forecast', context);
         }
     },
 

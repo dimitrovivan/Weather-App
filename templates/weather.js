@@ -12,7 +12,7 @@ export default ({
             <h2 class="report-heading"> reports 24/7.</h2>
             <div class="search-container flex">
                 <input type="text" class="search-input" placeholder="Search city or country" required/>
-                <a href="/forecast" class="btn btn--primary get-weather-button navLink" @click=${passLocation}>Check</a>
+                <a href="" class="btn btn--primary get-weather-button navLink" @click=${passLocation}>Check</a>
             </div>
             <p>Best way to know your City or Country weather.</p>
         </div>
