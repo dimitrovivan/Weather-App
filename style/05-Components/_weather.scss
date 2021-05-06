@@ -1,14 +1,31 @@
 .weather-page {
-    position: relative;
 
-
+    
     &__body {
         justify-content: space-between;
+
+        @include for-tablet-landscape-up {
+            margin-top: 8rem;
+        }
+
+        @include for-tablet-portrait-up {
+            flex-direction: column;
+        }
+
+
     }
 
     &__image {
         max-width: 50%;
         margin: 50px 30px 0 0;
+
+        @include for-tablet-portrait-up {
+            margin: 20px auto;
+        }
+
+        @include for-phone-only {
+           display: none;
+        }
 
         img {
             border-radius: 10px;
@@ -22,17 +39,28 @@
         align-content: space-around;
         max-width: 40%;
 
+        @include for-tablet-portrait-up {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
         h2 {
-            margin: 50px 0 5px;
+            margin: 50px 0;
             letter-spacing: .8px;
+            line-height: 5rem;
+
+            @include for-tablet-portrait-up {
+                margin: 0 0 3rem;
+            }
+
+            @include for-phone-only {
+                margin: 5rem 0 6rem;
+
+             }
         }
 
         p {
             margin: 15px 0;
-        }
-
-        .report-heading {
-            margin: 0 0 20%;
         }
 
         .get-weather-button {

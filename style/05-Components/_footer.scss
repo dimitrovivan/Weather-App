@@ -5,4 +5,11 @@
     left: 50%;
     transform: translate(-50%);
     line-height: 25px;
+
+    @include for-phone-only {
+
+        left: 15%;
+       transform: translate(0);
+
+    }
 }

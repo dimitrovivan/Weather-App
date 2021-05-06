@@ -469,6 +469,14 @@ header {
   line-height: 25px;
 }
 
+@media (max-width: 599px) {
+  .footer {
+    left: 15%;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
 .btn {
   padding: 10px 20px;
   border-radius: 8px;
@@ -907,19 +915,42 @@ main {
   background: linear-gradient(20deg, #00abed 22%, #0086e0 53%);
 }
 
-.weather-page {
-  position: relative;
-}
-
 .weather-page__body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
+@media (max-width: 1199px) {
+  .weather-page__body {
+    margin-top: 8rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .weather-page__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .weather-page__image {
   max-width: 50%;
   margin: 50px 30px 0 0;
+}
+
+@media (max-width: 899px) {
+  .weather-page__image {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 599px) {
+  .weather-page__image {
+    display: none;
+  }
 }
 
 .weather-page__image img {
@@ -940,17 +971,33 @@ main {
   max-width: 40%;
 }
 
+@media (max-width: 899px) {
+  .weather-page__description {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
 .weather-page__description h2 {
-  margin: 50px 0 5px;
+  margin: 50px 0;
   letter-spacing: .8px;
+  line-height: 5rem;
+}
+
+@media (max-width: 899px) {
+  .weather-page__description h2 {
+    margin: 0 0 3rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .weather-page__description h2 {
+    margin: 5rem 0 6rem;
+  }
 }
 
 .weather-page__description p {
   margin: 15px 0;
-}
-
-.weather-page__description .report-heading {
-  margin: 0 0 20%;
 }
 
 .weather-page__description .get-weather-button {
