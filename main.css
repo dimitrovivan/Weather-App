@@ -883,6 +883,22 @@ main {
   display: none;
 }
 
+@media (max-width: 1199px) {
+  .notification-container {
+    line-height: 25px;
+    top: 5px;
+    width: 40%;
+  }
+}
+
+@media (max-width: 599px) {
+  .notification-container {
+    line-height: 25px;
+    top: 5px;
+    width: 60%;
+  }
+}
+
 .error {
   background-color: red;
 }

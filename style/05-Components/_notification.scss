@@ -15,6 +15,20 @@
     border-radius: 20px;
     box-shadow: 2px 6px 10px 0px #6371be;
     display: none;
+
+    @include for-tablet-landscape-up {
+        line-height: 25px;
+        top: 5px;
+        width: 40%;
+    }
+
+    @include for-phone-only{
+        line-height: 25px;
+        top: 5px;
+        width: 60%;
+    }
+
+
 }
 
 .error {
