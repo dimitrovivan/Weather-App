@@ -1,6 +1,7 @@
 import { getTemplate, rootRender } from './templateServices.js';
 import { getDataFromStorage } from './authServices.js';
 import { getTimeData, getCurrentLocation, getCurrentWeatherData, getFullWeatherData} from './weatherServices.js';
+import { showNotification } from './notification.js';
 
 const routeOnPopstate = () => router(location.pathname);
 
@@ -36,6 +37,10 @@ const route = [
 
             context = { ...timeData, ...userData, ...weatherData };
 
+            } catch {
+
+                showNotification("error", "Something went wrong... Please try again.");
+                
             } finally {
 
                 return getTemplate('home', context);
@@ -111,9 +116,20 @@ async function router(path) {
 
     let currentRoute = checkForPath(path);
 
-    let template = await currentRoute.execute();
+    try {
 
+    let template = await currentRoute.execute();
     return rootRender(template);
+
+    } catch {
+
+        let weatherRoute = checkForPath('/weather');
+        let weatherTemplate = await weatherRoute.execute();
+        rootRender(weatherTemplate);
+        showNotification("error", "Incorrect input or link.");
+
+    }
+
 }
 
 
