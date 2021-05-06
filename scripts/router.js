@@ -39,7 +39,6 @@ const route = [
 
             } catch {
 
-                showNotification("error", "Something went wrong... Please try again.");
                 
             } finally {
 

@@ -1,4 +1,12 @@
 .root {
+
+    @include for-tablet-landscape-up {
+           padding: 0px 20px 0px 5%;
+           width: 90%;
+           height: 90%;
+    }
+
+
     position: relative;
     z-index: -997;
     display: grid;
