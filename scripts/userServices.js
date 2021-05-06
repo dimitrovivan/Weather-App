@@ -29,6 +29,7 @@ const checkOnSubmit = {
 
 
         if (!email || !password || !repeatPassword) {
+            emailElement.value = '';
             showNotification("error", "Please fill all fields");
             return false;
         }
@@ -59,6 +60,7 @@ const checkOnSubmit = {
         }
 
         if (!checkEmailValidation(email)) {
+            emailElement.value = '';
             showNotification("error", "Invalid email... Example: showemail@mail.bg");
             return false;
         }
