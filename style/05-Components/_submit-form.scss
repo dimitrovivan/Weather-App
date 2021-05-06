@@ -13,7 +13,7 @@
         display: flex;
         justify-content: center;
         padding: 5px 0px 5px 10px;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
         outline: none;
         background-color: $primary-white;
         border: 1px solid $primary-white;
@@ -27,9 +27,15 @@
     }
 
     button {
+        color: white;
         margin: 0 auto;
         border-radius: 20px;
-        width: 15%;
+        width: 170px;
         padding: 10px 20px;
+
+        @include for-phone-only {
+            width: 110px;
+        }
+
     }
 }

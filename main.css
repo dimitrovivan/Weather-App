@@ -364,6 +364,7 @@ body {
   z-index: -997;
   padding: 0px 20px 0px 10%;
   max-width: 85%;
+  min-width: 85%;
   height: 85%;
   border-radius: 8px;
   background: #1c006a;
@@ -624,13 +625,19 @@ main {
 }
 
 .login-page {
-  max-width: 70%;
   margin-left: 10rem;
+  max-width: 70%;
+}
+
+@media (max-width: 899px) {
+  .login-page {
+    margin: 0 auto;
+  }
 }
 
 .login-page__header h1 {
   text-align: center;
-  margin: 2rem auto 5rem;
+  margin: 5rem 0;
 }
 
 .register-page {
@@ -667,7 +674,7 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 5px 0px 5px 10px;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   outline: none;
   background-color: #efeff6;
   border: 1px solid #efeff6;
@@ -685,10 +692,17 @@ main {
 }
 
 .submit-form button {
+  color: white;
   margin: 0 auto;
   border-radius: 20px;
-  width: 15%;
+  width: 170px;
   padding: 10px 20px;
+}
+
+@media (max-width: 599px) {
+  .submit-form button {
+    width: 110px;
+  }
 }
 
 .curr-weather {
