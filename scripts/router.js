@@ -58,17 +58,19 @@ const route = [
 
     {
         regexPath: /^\/weather\/[a-zA-Z]+$/,
-        execute: () => {
+        execute: async () => {
 
             let userData = getDataFromStorage('userData');
 
             let locationName = getDataFromStorage('location').name;
 
-            let weatherData = getFullWeatherData(locationName);
+            let weatherData = await getFullWeatherData(locationName);
 
             let context = {...userData, ...weatherData};
 
-            return getTemplate('forecast', context);
+            if(weatherData) return getTemplate('forecast', context);
+
+            return getTemplate('notFound', context);
         }
     },
 

@@ -8,3 +8,7 @@ export  function passLocation() {
 
     saveDataInStorage('location', {name: inputElement});
 }
+
+export function backOnPush() {
+    history.back();
+}
