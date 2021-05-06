@@ -362,12 +362,8 @@ body {
 .root {
   position: relative;
   z-index: -997;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 5fr;
-      grid-template-rows: 1fr 5fr;
   padding: 0px 20px 0px 10%;
-  width: 85%;
+  max-width: 85%;
   height: 85%;
   border-radius: 8px;
   background: #1c006a;
@@ -375,6 +371,14 @@ body {
   overflow: hidden;
   -webkit-box-shadow: 2px 12px 10px 0px #6371be;
           box-shadow: 2px 12px 10px 0px #6371be;
+}
+
+@media (max-width: 1199px) {
+  .root {
+    padding: 0px 20px 0px 5%;
+    max-width: 90%;
+    height: 90%;
+  }
 }
 
 .root::before {
@@ -393,7 +397,7 @@ body {
 header {
   position: relative;
   z-index: 1;
-  margin-top: 2.5rem;
+  margin: 2.5rem 0 2.5rem;
 }
 
 .top-navigation {
@@ -452,6 +456,15 @@ header {
 
 .top-navigation__btn {
   margin-right: 2rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  margin-top: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 .btn {
@@ -518,16 +531,36 @@ header {
 }
 
 .about-page {
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 2fr 1fr;
-      grid-template-rows: 1fr 2fr 1fr;
+  max-width: 100%;
 }
 
 .about-page__header h1 {
   font-weight: 500;
-  margin-bottom: 5rem;
+}
+
+@media (max-width: 899px) {
+  .about-page__header h1 {
+    text-align: center;
+    margin: 30px 0 0;
+  }
+}
+
+.about-page__main {
+  max-width: 90%;
+  margin-top: 5rem;
+}
+
+@media (max-width: 899px) {
+  .about-page__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 2rem auto 0;
+  }
 }
 
 .about-page__main p {
@@ -535,11 +568,48 @@ header {
   margin-top: 2rem;
 }
 
+@media (max-width: 899px) {
+  .about-page__main p {
+    text-align: center;
+    margin: 2rem auto 0;
+  }
+}
+
+.about-page__description {
+  max-width: 50%;
+}
+
+@media (max-width: 899px) {
+  .about-page__description {
+    max-width: 90%;
+    margin: 0 auto 5rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .about-page__description {
+    margin: 7rem auto 0;
+  }
+}
+
 .about-page__image-wrapper {
   margin: 0 2rem;
-  width: 50%;
+  max-width: 50%;
   border-radius: 5px;
   overflow: hidden;
+}
+
+@media (max-width: 899px) {
+  .about-page__image-wrapper {
+    max-width: 55%;
+    margin: 0 auto 50px;
+  }
+}
+
+@media (max-width: 599px) {
+  .about-page__image-wrapper {
+    display: none;
+  }
 }
 
 .about-page__image-wrapper img {
@@ -563,10 +633,6 @@ main {
   margin: 2rem auto 5rem;
 }
 
-.login-page .footer {
-  margin: 10rem auto 0;
-}
-
 .register-page {
   margin-left: 10rem;
   max-width: 70%;
@@ -575,10 +641,6 @@ main {
 .register-page__header h1 {
   text-align: center;
   margin: 2rem auto 5rem;
-}
-
-.register-page .footer {
-  margin: 5rem auto 0;
 }
 
 .submit-form {
@@ -871,11 +933,6 @@ main {
   background: rgba(112, 69, 231, 0.5);
 }
 
-.weather-page .footer {
-  position: absolute;
-  bottom: 20px;
-}
-
 .weather-page__data {
   max-width: 60%;
 }
@@ -888,14 +945,6 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-.page-404 .footer {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 .forecast-page__header {
@@ -915,14 +964,6 @@ main {
 
 .forecast-page__body .curr-weather {
   margin: 0 auto;
-}
-
-.forecast-page .footer {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
 }
 
 .text-centered {

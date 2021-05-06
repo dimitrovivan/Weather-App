@@ -2,17 +2,15 @@
 
     @include for-tablet-landscape-up {
            padding: 0px 20px 0px 5%;
-           width: 90%;
+           max-width: 90%;
            height: 90%;
     }
 
 
     position: relative;
     z-index: -997;
-    display: grid;
-    grid-template-rows: 1fr 5fr;
     padding: 0px 20px 0px 10%;
-    width: 85%;
+    max-width: 85%;
     height: 85%;
     border-radius: 8px;
     background: rgb(28,0,106);

@@ -1,4 +1,5 @@
 @import './style/01-Tools/colors';
+@import './style/01-Tools/mixins';
 
 @import './style/02-Generics/normalizer';
 @import './style/02-Generics/typography';
@@ -13,6 +14,7 @@
 @import './style/05-Components/pageWrapper';
 @import './style/05-Components/root';
 @import './style/05-Components/header';
+@import './style/05-Components/footer';
 @import './style/05-Components/button';
 @import './style/05-Components/home';
 @import './style/05-Components/about';
