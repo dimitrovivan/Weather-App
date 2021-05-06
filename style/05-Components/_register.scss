@@ -3,6 +3,10 @@
     margin-left: 10rem;
     max-width: 70%;
 
+    @include for-tablet-portrait-up {
+        margin: 0 auto;
+    }
+
     &__header {
 
         h1 {

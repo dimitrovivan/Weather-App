@@ -466,6 +466,7 @@ header {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  line-height: 25px;
 }
 
 .btn {
@@ -643,6 +644,12 @@ main {
 .register-page {
   margin-left: 10rem;
   max-width: 70%;
+}
+
+@media (max-width: 899px) {
+  .register-page {
+    margin: 0 auto;
+  }
 }
 
 .register-page__header h1 {
