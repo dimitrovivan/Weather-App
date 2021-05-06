@@ -64,9 +64,11 @@ const route = [
 
             let locationName = getDataFromStorage('location').name;
 
+            let timeData = getTimeData();
+
             let weatherData = await getFullWeatherData(locationName);
 
-            let context = {...userData, ...weatherData};
+            let context = {...userData, ...weatherData, ...timeData};
 
             if(weatherData) return getTemplate('forecast', context);
 

@@ -484,6 +484,13 @@ header {
   font-weight: 600;
 }
 
+.btn--back {
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+  padding: 15px 40px;
+  color: white;
+}
+
 .home-page__heading {
   margin: 0 0 3rem;
 }
@@ -873,13 +880,6 @@ main {
   max-width: 60%;
 }
 
-.page-404 button {
-  border-top-left-radius: 100%;
-  border-bottom-left-radius: 100%;
-  padding: 15px 40px;
-  color: white;
-}
-
 .page-404__heading {
   font-style: italic;
   font-size: 4.5rem;
@@ -896,6 +896,33 @@ main {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.forecast-page__header {
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.forecast-page__header h1 {
+  margin: 10px 10px 30px 50px;
+}
+
+.forecast-page__body {
+  margin: 30px 0;
+}
+
+.forecast-page__body .curr-weather {
+  margin: 0 auto;
+}
+
+.forecast-page .footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 .text-centered {
