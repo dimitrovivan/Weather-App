@@ -22,7 +22,7 @@ export  function passLocation() {
 
     let modifiedString = inputString.split(' ').filter(word => word != '').join(' ');
     
-    getWeatherBtn.href = `/weather/${modifiedString}`;
+    getWeatherBtn.href = `/weather/${modifiedString.toLowerCase()}`;
     saveDataInStorage('location', {name: modifiedString});
 
     inputElement.value = '';

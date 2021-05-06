@@ -58,7 +58,7 @@ export default ( {
             
                      <div class="curr-weather__wind">
                      <img src="../images/wind.png" alt="Wind picture" class="weather-details-picture">
-                       <div>Wind: ${windSpeed}m/s</div>
+                       <div>Wind: ${windSpeed} m/s</div>
                      </div>
             
                      <div class="curr-weather__humudity">

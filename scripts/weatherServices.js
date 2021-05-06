@@ -1,10 +1,6 @@
-import { saveDataInStorage, getDataFromStorage } from './authServices.js';
-
-const apiKey = '246cebefc6972a472b2621e015a5d2a7';
-
 const getEndpoint = {
 
-    current: (latitude, longitude) => `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`,
+    current: (latitude, longitude) => `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=246cebefc6972a472b2621e015a5d2a7&units=metric`,
 }
 
 const monthObj = {
@@ -22,6 +18,7 @@ const monthObj = {
     12: 'December'
 }
 
+// I have written only BG because there is no sense to fill it with all countries. Its for educ purposes.
 const countryObj = {
     BG: "Bulgaria"
 }
@@ -58,29 +55,44 @@ export async function getCurrentWeatherData(latitude, longitude) {
 
     let data = await response.json();
 
-    let cloudPercentage = data.clouds.all;
-    let humidity = data.main.humidity;
-    let windSpeed = parseFloat(data.wind.speed).toFixed(1);
-    let currTemp = Math.round(data.main.temp);
-    let feelsLike = Math.round(data.main.feels_like);
-    let mainWeather = data.weather[0].main;
-    let weatherDescription = data.weather[0].description;
-    let weatherIconCode = data.weather[0].icon;
-    let city = data.name;
-    let countryCode = data.sys.country;
-
-    return {
-        cloudPercentage,
-        humidity,
-        windSpeed,
-        currTemp,
-        feelsLike,
-        mainWeather,
-        weatherDescription,
-        weatherIconCode,
-        city,
-        country: countryObj[countryCode]
-    }
+    return getRegularWeatherData(data);
 
 }
 
+export async function getFullWeatherData(location) {
+
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=246cebefc6972a472b2621e015a5d2a7&units=metric`;
+
+    try {
+
+    let response = await fetch(url);
+
+    if(response.status == 404) throw new Error("Wrong city or country");
+
+    let data = await response.json();
+
+    return getRegularWeatherData(data);
+
+    } catch(err) {
+
+        return null;
+    } 
+
+}
+
+
+function getRegularWeatherData(dataObj) {
+
+    return {
+       cloudPercentage: dataObj.clouds.all,
+       humidity: dataObj.main.humidity,
+       windSpeed: parseFloat(dataObj.wind.speed).toFixed(1),
+       currTemp: Math.round(dataObj.main.temp),
+       feelsLike: Math.round(dataObj.main.feels_like),
+       mainWeather: dataObj.weather[0].main,
+       weatherDescription: dataObj.weather[0].description,
+       weatherIconCode: dataObj.weather[0].icon,
+       city: dataObj.name,
+       country: countryObj[dataObj.sys.country]
+    }
+}
