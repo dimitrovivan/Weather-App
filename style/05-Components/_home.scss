@@ -1,4 +1,13 @@
 .home-page {
+
+    &__header {
+
+        @include for-tablet-portrait-up {
+            text-align: center;
+            margin: 50px 0 0;
+        }
+
+    }
     
     &__heading {
         margin: 0 0 3rem;
@@ -9,6 +18,7 @@
         p {
             margin-bottom: 1rem;
             font-size: 1.7rem;
+            line-height: 25px;
         }
 
         a {
@@ -19,6 +29,13 @@
 
     &__main {
 
+        .curr-weather {
+
+          @include for-tablet-landscape-up {
+            margin: 30px auto 0;
+        }
+    }
+
         margin-bottom: 20px;
 
         .picture-wrapper {
@@ -27,6 +44,16 @@
             img {
                 width: 100%;
             }
+        }
+    }
+
+    .footer {
+        @include for-tablet-portrait-up {
+            position: initial;
+            left: 0;
+            bottom: 0;
+            transform: translate(0);
+            margin: 10px auto;
         }
     }
 

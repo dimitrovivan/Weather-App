@@ -6,7 +6,8 @@
            height: 90%;
     }
 
-
+    overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
     z-index: -997;
     padding: 0px 20px 0px 10%;
@@ -16,7 +17,6 @@
     border-radius: 8px;
     background: rgb(28,0,106);
     background: linear-gradient(42deg, rgba(28,0,106,1) 39%, rgba(42,50,230,1) 100%);
-    overflow: hidden;
     box-shadow: 2px 12px 10px 0px #6371be;
 }
 

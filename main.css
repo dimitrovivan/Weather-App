@@ -323,6 +323,17 @@ a:hover {
   cursor: pointer;
 }
 
+.root::-webkit-scrollbar {
+  width: 10px;
+}
+
+.root::-webkit-scrollbar-thumb {
+  background-color: #28089B;
+  border-radius: 10px;
+  margin: 5px;
+  height: 50px;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -360,6 +371,8 @@ body {
 }
 
 .root {
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   z-index: -997;
   padding: 0px 20px 0px 10%;
@@ -369,7 +382,6 @@ body {
   border-radius: 8px;
   background: #1c006a;
   background: linear-gradient(42deg, #1c006a 39%, #2a32e6 100%);
-  overflow: hidden;
   -webkit-box-shadow: 2px 12px 10px 0px #6371be;
           box-shadow: 2px 12px 10px 0px #6371be;
 }
@@ -514,6 +526,13 @@ header {
   color: white;
 }
 
+@media (max-width: 899px) {
+  .home-page__header {
+    text-align: center;
+    margin: 50px 0 0;
+  }
+}
+
 .home-page__heading {
   margin: 0 0 3rem;
 }
@@ -521,6 +540,7 @@ header {
 .home-page__description p {
   margin-bottom: 1rem;
   font-size: 1.7rem;
+  line-height: 25px;
 }
 
 .home-page__description a {
@@ -532,12 +552,29 @@ header {
   margin-bottom: 20px;
 }
 
+@media (max-width: 1199px) {
+  .home-page__main .curr-weather {
+    margin: 30px auto 0;
+  }
+}
+
 .home-page__main .picture-wrapper {
   width: 300px;
 }
 
 .home-page__main .picture-wrapper img {
   width: 100%;
+}
+
+@media (max-width: 899px) {
+  .home-page .footer {
+    position: initial;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    margin: 10px auto;
+  }
 }
 
 .about-page {
@@ -722,7 +759,7 @@ main {
 
 .curr-weather {
   position: relative;
-  max-width: 70%;
+  max-width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -760,6 +797,12 @@ main {
   text-align: right;
 }
 
+@media (max-width: 899px) {
+  .curr-weather .temp-description-wrapper {
+    margin-bottom: 5px;
+  }
+}
+
 .curr-weather__location-description {
   font-style: italic;
   font-size: 2rem;
@@ -786,9 +829,38 @@ main {
   display: flex;
 }
 
+@media (max-width: 899px) {
+  .curr-weather__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .curr-weather__main-temp-description {
   position: relative;
   width: 30%;
+}
+
+@media (max-width: 899px) {
+  .curr-weather__main-temp-description {
+    width: 100%;
+  }
+}
+
+@media (max-width: 899px) {
+  .curr-weather__main-temp-description .temp-image-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .curr-weather__main-temp-description .temp-image-wrapper img {
@@ -796,9 +868,22 @@ main {
   width: 70%;
 }
 
+@media (max-width: 899px) {
+  .curr-weather__main-temp-description .temp-image-wrapper img {
+    margin: 0 auto;
+    width: 40%;
+  }
+}
+
 .curr-weather__main-temp-description .weather-description {
   margin: 5px;
   font-size: 1.7rem;
+}
+
+@media (max-width: 899px) {
+  .curr-weather__main-temp-description .weather-description {
+    margin: 0px 10px 5px;
+  }
 }
 
 .curr-weather__main-temp-description::after {
@@ -851,6 +936,28 @@ main {
   width: 33%;
 }
 
+@media (max-width: 899px) {
+  .curr-weather__extra-description > * {
+    width: 50%;
+  }
+}
+
+@media (max-width: 899px) {
+  .curr-weather__extra-description {
+    width: 100%;
+    margin: 10px 0 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .curr-weather__extra-description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .curr-weather__extra-description::after {
   content: '';
   display: block;
@@ -869,6 +976,12 @@ main {
   width: 60%;
   height: 50%;
   margin-bottom: 20px;
+}
+
+@media (max-width: 899px) {
+  .curr-weather__extra-description .weather-details-picture {
+    margin: 10px 30px 20px 0;
+  }
 }
 
 .notification-container {

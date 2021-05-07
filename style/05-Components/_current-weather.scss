@@ -1,6 +1,6 @@
 .curr-weather {
     position: relative;
-    max-width: 70%;
+    max-width: 80%;
     display: flex;
     flex-flow: column wrap;
     background-color: $blue-800;
@@ -28,6 +28,10 @@
         margin-right: 10px;
         font-size: 1.8rem;
         text-align: right;
+
+        @include for-tablet-portrait-up {
+            margin-bottom: 5px;
+        }
     }
 
     &__location-description {
@@ -48,16 +52,36 @@
     &__body {
         margin: 10px;
         display: flex;
+
+        @include for-tablet-portrait-up {
+            flex-direction: column;
+        }
     }
 
     &__main-temp-description {
         position: relative;
         width: 30%;
 
+        @include for-tablet-portrait-up {
+            width: 100%;
+        }
+
         .temp-image-wrapper {
+
+            @include for-tablet-portrait-up {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
             img {
                 margin: 0 auto;
                 width: 70%;
+
+                @include for-tablet-portrait-up {
+                margin: 0 auto;
+                    width: 40%;
+                }
             }
 
         }
@@ -65,6 +89,11 @@
         .weather-description {
             margin: 5px;
             font-size: 1.7rem;
+
+            @include for-tablet-portrait-up {
+                margin: 0px 10px 5px;
+                  
+                }
         }
 
         &::after {
@@ -89,6 +118,10 @@
             justify-content: center;
             align-items: center;
             width: 33%;
+
+            @include for-tablet-portrait-up {
+                width: 50%;
+            }
         }
 
         width: 70%;
@@ -99,6 +132,15 @@
         align-items: center;
         justify-content: center;
         padding: 5px;
+
+        @include for-tablet-portrait-up {
+            width: 100%;
+            margin: 10px 0 0;
+        }
+
+        @include for-phone-only {
+            flex-direction: column;
+        }
 
         &::after {
             content: '';
@@ -118,6 +160,11 @@
             width: 60%;
             height: 50%;
             margin-bottom: 20px;
+
+            @include for-tablet-portrait-up {
+                 
+                margin: 10px 30px 20px 0;
+            }
 
         }
     }
