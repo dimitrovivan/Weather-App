@@ -17,8 +17,7 @@ export default ({
     currTemp,
     cloudPercentage,
     humidity,
-    windSpeed,
-    country
+    windSpeed
 }) => html`${headerTemplate(isLogged)}
 <div class="forecast-page">
    <div class="forecast-page__header flex">

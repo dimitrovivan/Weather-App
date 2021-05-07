@@ -3,8 +3,27 @@
         margin: 0 auto;
         align-items: center;
 
+        @include for-phone-only {
+            flex-direction: column;
+        }
+
+        .btn--back {
+
+            @include for-phone-only {
+                align-self: flex-start;
+                margin: 20px 0 10px 50px;
+                padding: 10px 30px;
+            }
+
+        }
+
         h1 {
             margin: 10px 10px 30px 50px;
+
+            @include for-phone-only {
+                font-size: 3.5rem;
+                margin: 20px 0 20px 50px;
+            }
         }
     }
 
@@ -12,6 +31,16 @@
         margin: 30px 0;
         .curr-weather {
             margin: 0 auto;
+        }
+    }
+
+    .footer {
+        @include for-tablet-portrait-up {
+            position: initial;
+            left: 0;
+            bottom: 0;
+            transform: translate(0);
+            text-align: center;
         }
     }
 }

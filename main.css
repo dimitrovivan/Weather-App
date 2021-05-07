@@ -785,6 +785,15 @@ main {
   background-color: #400bc7;
 }
 
+@media (max-width: 599px) {
+  .curr-weather__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .curr-weather__header h4 {
   margin: 0 0 10px;
   font-weight: 400;
@@ -1151,8 +1160,33 @@ main {
           align-items: center;
 }
 
+@media (max-width: 599px) {
+  .forecast-page__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 599px) {
+  .forecast-page__header .btn--back {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin: 20px 0 10px 50px;
+    padding: 10px 30px;
+  }
+}
+
 .forecast-page__header h1 {
   margin: 10px 10px 30px 50px;
+}
+
+@media (max-width: 599px) {
+  .forecast-page__header h1 {
+    font-size: 3.5rem;
+    margin: 20px 0 20px 50px;
+  }
 }
 
 .forecast-page__body {
@@ -1161,6 +1195,17 @@ main {
 
 .forecast-page__body .curr-weather {
   margin: 0 auto;
+}
+
+@media (max-width: 899px) {
+  .forecast-page .footer {
+    position: initial;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    text-align: center;
+  }
 }
 
 .text-centered {
