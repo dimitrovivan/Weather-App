@@ -22,5 +22,7 @@ function navigateOnClick(e) {
 
     if(newURL.pathname == location.pathname) return;
 
+    rootElement.classList.remove('hiddenScroll');
+
     return navigate(newURL.pathname);
 }

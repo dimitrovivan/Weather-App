@@ -1,5 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import { logout } from '../../scripts/userServices.js';
+import { animateBurger } from '../../scripts/util.js';
 
 
 export default (isLogged) => html`
@@ -9,6 +10,8 @@ export default (isLogged) => html`
             <span class="weather-span">Weather.</span>
             <span class="spa-span">ID</span>
           </div>
+
+          <div class="top-navigation__show-list" @click=${animateBurger}><span class="burger-menu"></span></div>
           <ul class="top-navigation__list flex flex--centered">
             <li class="top-navigation__list-item"><a href="/" class="top-navigation__link flex flex--centered navLink">Home</a>
             </li>

@@ -6,6 +6,11 @@
            height: 90%;
     }
 
+    &.hiddenScroll {
+         overflow-y: hidden;
+    }
+
+
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;

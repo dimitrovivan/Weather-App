@@ -31,3 +31,18 @@ export  function passLocation() {
 export function backOnPush() {
     history.back();
 }
+
+export function animateBurger() {
+
+    let burgerMenuWrapperElement = document.querySelector('.top-navigation__show-list');
+    let rootElement = document.querySelector('.root');
+    if(burgerMenuWrapperElement.classList.contains('open')) {
+        rootElement.classList.remove('hiddenScroll');
+        burgerMenuWrapperElement.classList.remove('open');
+    } else {
+        rootElement.classList.add('hiddenScroll');
+        burgerMenuWrapperElement.classList.add('open');
+
+    }             
+
+}
