@@ -1143,14 +1143,21 @@ main {
   max-width: 60%;
 }
 
+.page-404 {
+  margin-top: 5rem;
+}
+
 .page-404__heading {
   font-style: italic;
   font-size: 4.5rem;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 10rem;
+}
+
+@media (max-width: 1199px) {
+  .page-404__heading {
+    width: 100%;
+  }
 }
 
 .forecast-page__header {

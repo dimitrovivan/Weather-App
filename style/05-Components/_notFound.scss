@@ -1,0 +1,15 @@
+.page-404 {
+
+    margin-top: 5rem;
+
+    &__heading {
+        font-style: italic;
+        font-size: 4.5rem;
+        text-align: center;
+        margin-top: 10rem;
+
+        @include for-tablet-landscape-up {
+            width: 100%;
+        }
+    }
+}
