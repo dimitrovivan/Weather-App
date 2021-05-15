@@ -20,7 +20,7 @@ function navigateOnClick(e) {
 
     let newURL = new URL(target.href);
 
-    if(newURL.pathname == location.pathname) return;
+    if(newURL.pathname == location.pathname) return document.querySelector('.top-navigation__show-list').classList.remove('open');
 
     rootElement.classList.remove('hiddenScroll');
 
