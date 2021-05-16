@@ -1,0 +1,25 @@
+{
+  "name": "Weather-App",
+  "version": "1.0.0",
+  "description": "Weather SPA | Educational purposes | Ivan Dimitrov",
+  "main": "app.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitrovivan/Weather-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimitrovivan/Weather-App/issues"
+  },
+  "homepage": "https://github.com/dimitrovivan/Weather-App#readme",
+  "dependencies": {
+    "lit-html": "^1.4.1",
+    "lite-server": "^2.6.1"
+  }
+}

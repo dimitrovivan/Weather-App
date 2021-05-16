@@ -1,4 +1,4 @@
-import { html } from 'https://unpkg.com/lit-html?module';
+import { html } from '../../node_modules/lit-html/lit-html.js';
 import { backOnPush } from '../scripts/util.js';
 import headerTemplate from '../templates/partials/header.js';
 

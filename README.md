@@ -35,18 +35,10 @@ work with different API's and asynchronous javascript.
    3. If you are not in Bulgaria it will be shown only your city name, without country name because in the object i haven't add all country codes.
  
 ## How to set up:
-1. Open terminal in root folder and type npm init -y
 
-2. Type npm install --save lite-server
+1. Open terminal in root folder and type npm install
 
-3. Then, go to package.json, in scripts object add:   
-"start": "lite-server"
---Warning: Don't forget comma.--
---Example: 
-"start": "lite-server",
-"test": "echo \"Error: no test specified\" && exit 1"
-
-4. Finnaly type in terminal npm start
+4. Type in terminal npm start
 
 ## Tech stack:
 HTML5, CSS3, Javascript, Lit-html, Firebase

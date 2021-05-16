@@ -1,4 +1,4 @@
-import { render } from 'https://unpkg.com/lit-html?module';
+import { render } from '../../node_modules/lit-html/lit-html.js';
 import  homeTemplate from '../templates/home.js';
 import  aboutTemplate from '../templates/about.js';
 import  weatherTemplate from '../templates/weather.js';

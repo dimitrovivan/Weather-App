@@ -1,4 +1,4 @@
-import { html } from 'https://unpkg.com/lit-html?module';
+import { html } from '../../node_modules/lit-html/lit-html.js';
 import { logout } from '../../scripts/userServices.js';
 import { animateBurger } from '../../scripts/util.js';
 
