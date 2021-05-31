@@ -30,15 +30,13 @@ work with different API's and asynchronous javascript.
   ####  Disdisadvantages:
    1. If you try to login when i have turned of Firebase authentication you will receive error "Failed to fetch", due to security reasons in Firebase. And after the second time    you try, or 1-3s it will be turned on automatically and you will be able to log in. It is same for register.
 
-   2. If you try to reach for example http://localhost:3000/weather/Bulgaria you will receive error, because lite-server considers Bulgaria for file and it is searching for it.    But you can reach with single recourses easily.
- 
-   3. If you are not in Bulgaria it will be shown only your city name, without country name because in the object i haven't add all country codes.
+   2. If you are not in Bulgaria it will be shown only your city name, without country name because in the object i haven't add all country codes.
  
 ## How to set up:
 
 1. Open terminal in root folder and type npm install
 
-4. Type in terminal npm start
+2. Type in terminal npm start
 
 ## Tech stack:
 HTML5, CSS3, Javascript, Lit-html, Firebase
