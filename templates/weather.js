@@ -20,7 +20,7 @@ export default ({
         </div>
       </div>
         <div class="weather-page__image">
-           <img src="../images/weatherLaptop.jpg"></img>
+           <img src="../images/weatherLaptop.jpg" />
         </div>
     </div>
     <div class="footer">Copyright@ 2021 Designed by Ivan Dimitrov</div>
